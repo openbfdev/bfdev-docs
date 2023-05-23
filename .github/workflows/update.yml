@@ -1,0 +1,52 @@
+name: Update bfdev document
+
+on:
+  push:
+  watch:
+    types: [started]
+  schedule:
+    - cron: 0 5 * * *
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    name: Test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+      - name: install dependencies
+        run: |
+          sudo apt update
+          sudo apt install \
+              cmake make gcc python3 pip doxygen
+          pip install sphinx breathe
+      - name: clone bfdev
+        run: git clone https://github.com/openbfdev/bfdev.git build
+      - name: build document
+        working-directory: ${{github.workspace}}/build
+        run: |
+            cmake -D CMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} \
+                  -D CMAKE_C_COMPILER=/usr/bin/gcc
+            cmake --build . --config ${{env.BUILD_TYPE}} -- htmldocs
+      - name: commit
+        run: |
+          git config --global user.email action@github.com
+          git config --global user.name action
+          cp -af ${{github.workspace}}/build/htmldocs/* .
+          git add .
+          git commit -m "Successfully update" -a --allow-empty
+      - name: push
+        uses: ad-m/github-push-action@master
+        with:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
