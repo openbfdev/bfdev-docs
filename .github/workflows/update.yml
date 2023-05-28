@@ -3,6 +3,7 @@ name: Update bfdev document
 on:
   push:
   watch:
+    branch: main
     types: [started]
   schedule:
     - cron: 0 5 * * *
@@ -40,11 +41,13 @@ jobs:
                   -D ENABLE_DOCUMENT=ON \
                   -D CMAKE_C_COMPILER=/usr/bin/gcc
             cmake --build . --config ${{env.BUILD_TYPE}} -- htmldocs
+      - name: copy document
+        run: |
+          mv ${{github.workspace}}/build/htmldocs/* .
       - name: commit
         run: |
           git config --global user.email action@github.com
           git config --global user.name action
-          cp -af ${{github.workspace}}/build/htmldocs/* .
           git add .
           git commit -m "Successfully update" -a --allow-empty
       - name: push
