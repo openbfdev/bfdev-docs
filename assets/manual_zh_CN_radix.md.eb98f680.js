@@ -1,1 +1,0 @@
-import{_ as a,o as e,c as t}from"./chunks/framework.7f588f2d.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"manual/zh_CN/radix.md","filePath":"manual/zh_CN/radix.md"}'),r={name:"manual/zh_CN/radix.md"};function n(o,s,c,d,i,_){return e(),t("div")}const l=a(r,[["render",n]]);export{p as __pageData,l as default};
