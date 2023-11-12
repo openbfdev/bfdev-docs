@@ -1,3 +1,3 @@
 # The bfdev library documentation
 
-[Bfdev Documentation Tutorial](https://openbfdev.github.io/bfdev-docs)
+[bfdev documentation tutorial](https://openbfdev.github.io/bfdev-docs)
