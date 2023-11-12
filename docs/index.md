@@ -1,3 +1,7 @@
 # The bfdev library documentation
 
-[User Manual](manual/index.md)
+## Introduction
+
+- [Install bfdev](manual/en_US/install.md)
+
+## Development guide
