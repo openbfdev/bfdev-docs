@@ -9,7 +9,7 @@ hero:
   text: High-performance algorithm library.
   tagline: Lorem ipsum...
   image:
-    src: /images/logo.png
+    src: /logo.png
     alt: VitePress
   actions:
     - theme: brand
