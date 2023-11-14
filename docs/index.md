@@ -7,7 +7,7 @@ titleTemplate: High-performance algorithm library
 hero:
   name: Bfdev
   text: High-performance algorithm library.
-  tagline: Lorem ipsum...
+  tagline: less is more...
   image:
     src: /logo.png
     alt: VitePress
