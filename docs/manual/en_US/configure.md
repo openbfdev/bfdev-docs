@@ -58,7 +58,7 @@ The configure command supports the following parameters:
 
 Example of parameters usage (all of this needs to be typed in one line):
 
-```
+```shell
 cmake -Bbuild
     -DBFDEV_DEVEL=ON
     -DBFDEV_DBGLIST=OFF
@@ -66,7 +66,7 @@ cmake -Bbuild
 
 After configuration, bfdev is compiled and installed using make:
 
-```
+```shell
 cd build
 make $(nproc)
 make install

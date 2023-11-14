@@ -2,7 +2,7 @@
 
 The bfdev array struct is defined as follows:
 
-```
+```c
 struct bfdev_array {
     const struct bfdev_alloc *alloc;
     unsigned int capacity;
@@ -16,7 +16,7 @@ The elements of the array are available in the `data` field. The `index` field h
 
 Use the `BFDEV_DEFINE_ARRAY(name, alloc, cells)` macro to define an array in a pool, and the `bfdev_array_init(array, alloc, cells)` call to initialize an array object that has already been allocated.
 
-```
+```c
 /* define an int array named foo using null allocator */
 BFDEV_DEFINE_ARRAY(foo, NULL, sizeof(int));
 
@@ -32,7 +32,7 @@ Use the following functions to additions and deletions elements to an array:
 
 If the currently allocated amount of memory is not large enough to accommodate the new elements, a new block of memory is allocated and the existing elements are copied to it. The new memory block is normally twice as large as the existing one.
 
-```
+```c
 int *foo, *bar;
 
 foo = bfdev_array_push(array, 3);
