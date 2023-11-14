@@ -33,7 +33,7 @@ Use the following functions to alloc and free in an allocpool:
 - bfdev_allocpool_alloc(allocpool, size, align) allocate an aligned memory block
 - bfdev_allocpool_free(allocpool, block) release any block of memory
 
-The space occupied by the allocation pool grows linearly, free function will only release a reference count. When there are zero references, the space will be released uniformly.
+The space occupied by the allocation pool grows linearly, free function will only release a reference count, when the count reaches zero, the space will be released uniformly.
 
 ```c
 int *foo;
