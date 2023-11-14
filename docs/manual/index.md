@@ -14,3 +14,4 @@
 
 - [Allocpool](en_US/allocpool.md)
 - [Array](en_US/array.md)
+- [Bloom Filter](en_US/bloom.md)
