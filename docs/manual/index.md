@@ -12,4 +12,5 @@
 
 ## Containers API
 
+- [Allocpool](en_US/allocpool.md)
 - [Array](en_US/array.md)
