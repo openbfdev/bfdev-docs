@@ -21,11 +21,11 @@ static char block[4096];
 BFDEV_DEFINE_ALLOCPOOL(foo, block, sizeof(block));
 
 /* initialize int allocpool named bar using malloc */
-struct bfdev_allocpool *bar;
+struct bfdev_allocpool bar;
 void *block;
 
 block = malloc(4096);
-bar = bfdev_allocpool_init(&bar, block, 4096);
+bfdev_allocpool_init(&bar, block, 4096);
 ```
 
 Use the following functions to alloc and free in an allocpool:
@@ -40,5 +40,4 @@ int *foo;
 
 foo = bfdev_allocpool_alloc(allocpool, 4, 0);
 bfdev_allocpool_free(allocpool, foo);
-
 ```
