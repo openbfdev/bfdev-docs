@@ -2,6 +2,10 @@
 
 bfdev can be installed differently, depending on the operating system.
 
+## Installation on Archlinux
+
+For Archlinux, bfdev can be installed from [packages](https://aur.archlinux.org/packages/bfdev-git) through aur.
+
 ## Installation on Docker
 
 For Docker, bfdev [packages](https://hub.docker.com/repository/docker/opbfdev/bfdev) from hub.docker.com can be used.
