@@ -56,18 +56,30 @@ The configure command supports the following parameters:
 
     enable dynamic monitoring of reference count (enabled by default).
 
-Example of parameters usage (all of this needs to be typed in one line):
+## Example of parameters usage
+
+Install to system root (all of this needs to be typed in one line):
 
 ```shell
 cmake -Bbuild
-    -DBFDEV_DEVEL=ON
-    -DBFDEV_DBGLIST=OFF
+      -DBFDEV_EXAMPLES=ON
+      -DCMAKE_BUILD_TYPE=Release
+      -DCMAKE_INSTALL_PREFIX=/usr
+```
+
+Install to user's local:
+
+```shell
+cmake -Bbuild
+      -DBFDEV_EXAMPLES=ON
+      -DCMAKE_BUILD_TYPE=Release
+      -DCMAKE_INSTALL_PREFIX=${HOME}/.local
 ```
 
 After configuration, bfdev is compiled and installed using make:
 
 ```shell
 cd build
-make $(nproc)
+make -j$(nproc)
 make install
 ```
