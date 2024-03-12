@@ -7,6 +7,7 @@
 
 ## Development guide
 
+- [First project](en_US/first.md)
 - [Code layout](en_US/layout.md)
 - [Include files](en_US/include.md)
 
