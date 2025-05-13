@@ -16,3 +16,8 @@
 - [Allocpool](en_US/allocpool.md)
 - [Array](en_US/array.md)
 - [Bloom Filter](en_US/bloom.md)
+
+## Components
+
+- [Components](en_US/components.md)
+- [Components (Chinese)](zh_CN/components-zh.md)
